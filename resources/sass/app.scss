@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.delete-btn{
+    border: none;
+    background-color: transparent;
+    color: red;
+    -webkit-appearance: none;
+    position: absolute;
+    right: 5px;
+ };
+ .update-btn{
+    border: none;
+    background-color: transparent;
+    color: #27ae60;
+    -webkit-appearance: none;
+    position: absolute;
+    right: 20px;
+ };
