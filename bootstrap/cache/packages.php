@@ -17,7 +17,7 @@
   array (
     'providers' => 
     array (
-      0 => 'JeroenNoten\\LaravelAdminLte\\ServiceProvider',
+      0 => 'JeroenNoten\\LaravelAdminLte\\AdminLteServiceProvider',
     ),
   ),
   'laravel/tinker' => 
