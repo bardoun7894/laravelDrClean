@@ -15,6 +15,4 @@ class ClothesController extends Controller
     return view('admin.clothes.clothes')->with(
         ['clothes' =>$clothes,
         'currency_code'=>$currency_code
-        ]);
-   }
-}
+        ]);  }  }

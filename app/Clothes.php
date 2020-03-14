@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Clothes extends Model
 {
     protected $fillable = [
-    'name','image_id','service_id','user_id','quantity','price','total'
+    'name','user_id','image_id','service_id','quantity','price','total'
        ];
        public function users(){
            return $this->belongsTo(User::class);
@@ -16,7 +16,7 @@ class Clothes extends Model
         return $this->hasOne(Image::class);  
         }
         public function services(){
-            return $this->belongsTo(Service::class);  
+            return $this->belongTo(Service::class);  
             }
         
 }

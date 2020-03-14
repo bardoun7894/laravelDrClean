@@ -15,9 +15,10 @@ class ServicesResource extends JsonResource
     public function toArray($request)
     {
         return  [
-            'service_id'=>$this->id,
+           
+            'services_id'=>$this->id,
             'service_type'=>$this->service_type,
-         //   'clothes'=>  clothesResource::collection($this->clothes),
+            'clothes'=>  clothesResource::collection($this->clothes),
             ]; 
     }
 }

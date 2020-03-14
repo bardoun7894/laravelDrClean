@@ -16,8 +16,8 @@ class CreateClothesTable extends Migration
         Schema::create('clothes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
-            $table->bigInteger('services_id');
             $table->bigInteger('image_id');
+            $table->bigInteger('service_id');
             $table->string('name');
             $table->integer('quantity');
             $table->double('price');

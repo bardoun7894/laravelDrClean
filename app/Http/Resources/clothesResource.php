@@ -19,8 +19,7 @@ class clothesResource extends JsonResource
         'name'=>$this->name,
         'price'=>$this->price,
         'quantity'=>$this->quantity,
-        'clothes_images'=>new ImageResource($this->images),
-        'services'=>new ServicesResource($this->services)
+        'clothes_images'=>new ImageResource($this->images), 
         ]; 
     }
 }
