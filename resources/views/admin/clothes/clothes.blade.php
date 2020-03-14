@@ -13,8 +13,8 @@
                         <div class="alert alert-primary" role="alert">
                            <h5> name : {{ $cloth-> name }}</h5> 
                           <h5> Price : {{$currency_code}}{{$cloth->price }}</h5> 
-                        {!! (count($cloth->images)>0) ?'<img class="img-thumbnail card-img"src="'.$cloth->images->url.'"/>' : '.'!!}
-         
+     {!! (count($cloth->images)>0) ?'<img class="img-thumbnail card-img" src="' .$cloth->images->url.'"/>' : '' !!}
+ 
                    </div>
                       </div>
                    @endforeach 

@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 
 class  ImageController extends Controller
 {
-
     public function index(){
         return ImageResource::collection(Image::paginate());
        }

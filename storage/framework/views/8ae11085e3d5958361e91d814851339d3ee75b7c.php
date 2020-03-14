@@ -10,9 +10,9 @@
                         <div class="alert alert-primary" role="alert">
                            <h5> name : <?php echo e($cloth-> name); ?></h5> 
                           <h5> Price : <?php echo e($currency_code); ?><?php echo e($cloth->price); ?></h5> 
-                        <?php echo (count($cloth->images)>0) ?'<img class="img-thumbnail card-img"src="'.$cloth->images->url.'"/>' : '.'; ?>
+     <?php echo (count($cloth->images)>0) ?'<img class="img-thumbnail card-img" src="' .$cloth->images->url.'"/>' : ''; ?>
 
-         
+ 
                    </div>
                       </div>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
