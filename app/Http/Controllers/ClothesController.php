@@ -14,11 +14,11 @@ class ClothesController extends Controller
       error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
       // error_reporting(E_ALL ^ E_WARNING); // Maybe this is enough
       }
-      
     $clothes =Clothes::with(['images'])->paginate(16);
     $currency_code=env("CURRENCY_CODE","RM");
   // return $clothes;
     return view('admin.clothes.clothes')->with(
         ['clothes' =>$clothes,
         'currency_code'=>$currency_code
-        ]);  }  }
+        ]); 
+       }  }
