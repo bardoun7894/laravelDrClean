@@ -15,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('auth/register','Api\AuthController@register');
 Route::post('auth/login','Api\AuthController@login');
+
 Route::get('clothes','api\ClothesController@index') ;
+
 Route::get('services','api\ServicesController@index') ;
+Route::get('services/{id}','api\ServicesController@show');
+Route::get('services/{id}/clothes','api\ServicesController@clothes');
+
+
 Route::get('images','api\ImageController@index') ;
 
 Route::middleware('auth:api')->get('/users', function (Request $request) {
