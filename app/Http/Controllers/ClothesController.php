@@ -69,6 +69,7 @@ class ClothesController extends Controller
         $file=$request->file('image');
         $extension=$file->getClientOriginalExtension();//getting image extension
         $filename=time().'.'.$extension;
+        $file->store('image');
         $file->move('app\public\image',$filename);
         $images->url=$filename;
        
@@ -76,7 +77,7 @@ class ClothesController extends Controller
           return $request;
           $images->url='';
         } 
-        
+
          $clothes->save();
          $images->clothes_id=$clothes->id;
          $images->save();
