@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Session;
 use App\Clothes;
+use App\Image;
 
 class ClothesController extends Controller
 {
@@ -21,4 +24,73 @@ class ClothesController extends Controller
         ['clothes' =>$clothes,
         'currency_code'=>$currency_code
         ]); 
-       }  }
+       }
+       public function newCloth($id=null){
+        $images=Image::all();
+        $clothes=null;
+        if(!is_null($id)){
+          $clothes=Clothes::with([
+            'clothes'=>$clothes,
+            'images'=>$images
+          ])->find($id);
+      
+            }
+          
+       return view('admin.clothes.new-cloth')->with([
+              'clothes'=>$clothes,
+              'images'=>$images
+            ]);
+
+           
+       }
+       public function delete($id){
+
+ 
+       }
+ public function store(Request $request){
+
+
+  $images=new Image();
+  $request->validate([
+          'name'=>'required',
+          'quantity'=>'required',
+          'price'=>'required', 
+          'total'=>'required', 
+          'image'=>'required', 
+         ]);
+         $clothes=new Clothes();
+         $clothes->name= $request->input('name');
+         $clothes->quantity=intval( $request->input('quantity'));
+         $clothes->price= doubleval($request->input('price'));
+         $clothes->total= doubleval($request->input('total'));
+      
+        if($request->hasfile('image')){
+        
+        $file=$request->file('image');
+        $extension=$file->getClientOriginalExtension();//getting image extension
+        $filename=time().'.'.$extension;
+        $file->move('app\public\image',$filename);
+        $images->url=$filename;
+       
+        }else{
+          return $request;
+          $images->url='';
+        } 
+        
+         $clothes->save();
+         $images->clothes_id=$clothes->id;
+         $images->save();
+         Session::flash('message','User '.$clothes->name.' has been added Successfully');
+         return redirect(route('clothes'));
+ 
+      }
+
+
+      public function update($id,Request $request){
+        $clothes=Clothes::find($id);
+      }
+     
+      
+      
+      
+      }

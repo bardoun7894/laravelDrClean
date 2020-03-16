@@ -18,5 +18,4 @@ class Clothes extends Model
         public function services(){
             return $this->belongTo(Service::class);  
             }
-        
 }

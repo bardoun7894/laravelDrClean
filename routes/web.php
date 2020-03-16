@@ -38,6 +38,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['auth','user_is_admin'],function(){
  Route::get('services','ServiceController@index')->name('services');
  Route::get('clothes','ClothesController@index')->name('clothes');
+ 
+ Route::get('new-cloth/{id?}','ClothesController@newCloth')->name('new-cloth');
+ Route::put('new-cloth/{id}','ClothesController@update')->name('update-cloth');;
+ Route::post('new-cloth','ClothesController@store');
+ Route::delete('clothes/{id}','ClothesController@delete');
+ 
+ 
  Route::get('adresses','AdressController@index')->name('adresses');
  Route::get( 'users','UserController@index')->name('users');
  Route::post('users','UserController@store');

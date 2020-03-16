@@ -10,18 +10,18 @@
       
       <form action="{{'users'}}" method="post" class="row"/>
             @csrf
-            <div class="form-group col-md-6">
-                  <label for="first_name">First name</label>
-                   <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
-                 </div>
-                     <div class="form-group col-md-6">
+                       <div class="form-group col-md-6">
+                                <label for="first_name">First name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+                        </div>
+                         <div class="form-group col-md-6">
                               <label for="last_name">Last name</label>
                               <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" required>
                          </div>
                          <div class="form-group col-md-6">
-                          <label for="email">email</label>
-                          <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-                     </div>
+                            <label for="email">email</label>
+                             <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                         </div>
                      <div class="form-group col-md-6">
                        <label for="number_phone">Number phone</label>
                        <input type="text" class="form-control" id="number_phone" name="number_phone" placeholder="Number phone" required>

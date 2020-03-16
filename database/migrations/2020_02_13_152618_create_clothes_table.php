@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class CreateClothesTable extends Migration
 {
@@ -15,9 +16,9 @@ class CreateClothesTable extends Migration
     {
         Schema::create('clothes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id');
-            $table->bigInteger('image_id');
-            $table->bigInteger('service_id');
+            $table->bigInteger('user_id')->unsigned()->nullable() ;
+            $table->bigInteger('image_id')->unsigned()->nullable() ;
+            $table->bigInteger('service_id')->unsigned()->nullable() ;
             $table->string('name');
             $table->integer('quantity');
             $table->double('price');
