@@ -68,7 +68,7 @@ class ClothesController extends Controller
         $file=$request->file('image');
         $extension=$file->getClientOriginalExtension();//getting image extension
         $filename=time().'.'.$extension;
-        $file->store('app\public\image',$filename);
+   //     $file->store('app\public\image',$filename);
         $file->move('app\public\image',$filename);
         $images->url=$filename;
        
