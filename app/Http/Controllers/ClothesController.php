@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Session;
+
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\File;
 use App\Clothes;
 use App\Image;
 
@@ -70,10 +74,12 @@ class ClothesController extends Controller
   
         $extension=$file->getClientOriginalExtension();//getting image extension
       
-        $filename=time().'.'.$extension;
-      
-        $file->storePubliclyAs('image',$filename,'public');
+        $filename=$file->getFilename().'.'.$extension;
+      //       $file->storePubliclyAs('image',$filename,'public');
    //     $file->move('app\public\image');
+   
+   Storage::disk('public')->put($filename, File::get($file));
+ 
         $images->url=$filename;
         }else{
           return $request;
