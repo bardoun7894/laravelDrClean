@@ -65,10 +65,14 @@ class ClothesController extends Controller
          $clothes->total= doubleval($request->input('total'));
       
         if($request->hasfile('image')){
+
         $file=$request->file('image');
+  
         $extension=$file->getClientOriginalExtension();//getting image extension
+      
         $filename=time().'.'.$extension;
-        $file->storePubliclyAs('image',$filename,'public');
+      
+      $path=$file->storeAs('public/images',$filename);
    //     $file->move('app\public\image');
         $images->url=$filename;
        
