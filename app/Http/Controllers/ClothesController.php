@@ -72,7 +72,7 @@ class ClothesController extends Controller
       
         $filename=time().'.'.$extension;
       
-      $path=$file->storeAs('public/images',$filename);
+      $path=$file->storeAs('app/public/image',$filename);
    //     $file->move('app\public\image');
         $images->url=$filename;
        
