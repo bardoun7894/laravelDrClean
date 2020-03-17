@@ -13,7 +13,7 @@
                         <div class="alert alert-primary" role="alert">
                          <h5> name : {{ $cloth-> name }}</h5> 
                           <h5> Price : {{$currency_code}}{{$cloth->price }}</h5> 
-     <img class="img-thumbnail card-img" src=" {{asset('app/public/image'.$cloth->images->url)}}"  width="100px;" height="100px;" alt="image" />
+     <img class="img-thumbnail card-img" src=" {{asset('public/images/'.$cloth->images->url)}}"  width="100px;" height="100px;" alt="image" />
      
      <a class="btn btn-success mt-2"  href="{{ route('update-cloth',['id'=>$cloth->id]) }}"> update cloth</a>
                    </div>
