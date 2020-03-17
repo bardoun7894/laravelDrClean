@@ -10,7 +10,7 @@
                         <div class="alert alert-primary" role="alert">
                          <h5> name : <?php echo e($cloth-> name); ?></h5> 
                           <h5> Price : <?php echo e($currency_code); ?><?php echo e($cloth->price); ?></h5> 
-     <img class="img-thumbnail card-img" src=" <?php echo e(asset('app/public/image/'.$cloth->images->url)); ?>"  width="100px;" height="100px;" alt="image" />
+     <img class="img-thumbnail card-img" src=" <?php echo e(asset('storage/image/'.$cloth->images->url)); ?>"  width="100px;" height="100px;" alt="image" />
      
      <a class="btn btn-success mt-2"  href="<?php echo e(route('update-cloth',['id'=>$cloth->id])); ?>"> update cloth</a>
                    </div>
