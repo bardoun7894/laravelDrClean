@@ -20,8 +20,8 @@
                        <div class="form-group col-md-6">
                                 <label for="name">Clothes name</label>
                                 <input type="text" class="form-control"
-                            id="name" name="name" placeholder="Clothes Name" required
-                            value="{{(!is_null($clothes)) ? $clothes->name : ''}}">
+                                 id="name" name="name" placeholder="Clothes Name" required
+                                 value="{{(!is_null($clothes)) ? $clothes->name : ''}}">
                        </div>
                             
                          <div class="form-group col-md-6">
@@ -67,18 +67,4 @@
 </div>
 
 @endsection
-
-{{-- @section('scripts') 
- <script>
-    $(document).ready(function(){
-        var activateImageUpload=$('.activate-image-upload');
-        activateImageUpload.on('click',function(e){
-            e.preventDefault();
-         var fileUploadId=$(this).data('fileId');
-            $('#'+fileUploadId).trigger('click');
-        
-        });
-    });
- </script>
-@endsection --}}
-
+ 

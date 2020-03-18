@@ -22,7 +22,8 @@ Route::get('services','api\ServicesController@index') ;
 Route::get('services/{id}','api\ServicesController@show');
 Route::get('services/{id}/clothes','api\ServicesController@clothes');
 
-
+Route::post('carts','Api/CartController@addClothesToCart');
+ 
 Route::get('images','api\ImageController@index') ;
 
 Route::middleware('auth:api')->get('/users', function (Request $request) {
